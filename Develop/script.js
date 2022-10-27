@@ -1,5 +1,8 @@
 // Assignment code here
-
+var lowercase = 'abcdefghijklmnopqrstuvwxyz';
+var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var numeric = '0123456789';
+var specialCharacters = ''
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -7,8 +10,10 @@ function generatePassword() {
   console.log('you clicked the button!');//to ensure that what you want to happen is happening
   //1. prompt for password criteria
   //    a. password length 8 <128
+
   //    b. lowercase, uppercase, numeric, special characters
   //2. validate for input
+  //    set each input/confirm to variable. use conditional--if true... if false....
   //3. display generated password
   
   
