@@ -1,25 +1,52 @@
 // Assignment code here
 var lowercase = 'abcdefghijklmnopqrstuvwxyz';
 var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var numeric = '0123456789';
-var specialCharacters = ''
+var numbers = '0123456789';
+var specialCharacters = '!@#$%^&*()~<>?'
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-  console.log('you clicked the button!');//to ensure that what you want to happen is happening
+  console.log('clicked the button');//to ensure that what you want to happen is happening
   //1. prompt for password criteria
+  var userChoice = prompt('How many characters do you want your password to be?');
   //    a. password length 8 <128
+  var passwordLength = parseInt(userChoice);
+  if (isNaN(passwordLength)){
+    alert('Must be a number.');
+    return;
+  } 
+  if (passwordLength < 8 || passwordLength > 128){
+    alert('Must be between 8 - 128 characters long');
+    return;
+  }
+//    b. lowercase, uppercase, numeric, special characters
+  var lowercaseAlert = confirm('Do you want lowercase letters in your password?');
+  var uppercaseAlert = confirm('Do you want uppercase letters in your password?');
+  var numberAlert = confirm('Do you want numbers in your password?');
+  var specialCharAlert = confirm('Do you want special characters in your password?');
 
-  //    b. lowercase, uppercase, numeric, special characters
-  //2. validate for input
+  var selectedOptions = []
+//2. validate for input
+  if (lowercaseAlert === true){
+    selectedOptions.push(lowercase);
+  }
+  if (uppercaseAlert === true){
+    selectedOptions.push(uppercase);
+  }
+  if (numberAlert === true){
+    selectedOptions.push(numbers);
+  }
+  if (specialCharAlert === true){
+    selectedOptions.push(specialCharacters);
+  }
+  console.log(selectedOptions);
+  
   //    set each input/confirm to variable. use conditional--if true... if false....
   //3. display generated password
-  
-  
-  
-  
-  return 'generated password will return here';//<---whatever gets returned based on prompts
+  var generatedPassword = " ";
+  //look up math methods and functions to generate random stuff
+  return 'generated password';//<---whatever gets returned based on prompts
 }
 // Write password to the #password input
 function writePassword() {
