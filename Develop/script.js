@@ -1,6 +1,6 @@
 // Assignment code here
-var lowercase = ('abcdefghijklmnopqrstuvwxyz').split(' ');
-var uppercase = ('ABCDEFGHIJKLMNOPQRSTUVWXYZ').split(' ');
+var lowercase = ('abcdefghijklmnopqrstuvwxyz').split('');
+var uppercase = ('ABCDEFGHIJKLMNOPQRSTUVWXYZ').split('');
 var numbers = ('0123456789').split('');
 var specialCharacters = ('!@#$%^&*()~<>?').split('');
 // Get references to the #generate element
@@ -50,10 +50,15 @@ function generatePassword() {
   console.log(selectedOptions);
   
   //3. display generated password
-  var generatedPassword = " ";
+  var generatedPassword = [];
+
   //look up math methods and functions to generate random stuff
-  //var randomPassword = Math.floor(Math.random() * selectedOptions.length);
-  console.log(randomPassword);
+  for (var i = 0; i < passwordLength; i++) {
+    var randomIndex = Math.floor(Math.random() * selectedOptions.length);
+    var randomChar = selectedOptions[randomIndex];
+    generatedPassword.push(randomChar);
+  }
+  console.log(generatedPassword);
   return generatedPassword;//<---whatever gets returned based on prompts
 }
 // Write password to the #password input
