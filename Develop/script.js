@@ -50,15 +50,15 @@ function generatePassword() {
   console.log(selectedOptions);
   
   //3. display generated password
-  var generatedPassword = [];
+  var generatedPassword = ('');
 
   //look up math methods and functions to generate random stuff
   for (var i = 0; i < passwordLength; i++) {
     var randomIndex = Math.floor(Math.random() * selectedOptions.length);
     var randomChar = selectedOptions[randomIndex];
-    generatedPassword.push(randomChar);
+    randomChar.textContent += generatedPassword;
   }
-  console.log(generatedPassword);
+  console.log(randomChar);
   return generatedPassword;//<---whatever gets returned based on prompts
 }
 // Write password to the #password input
