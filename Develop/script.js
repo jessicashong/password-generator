@@ -1,8 +1,8 @@
 // Assignment code here
-var lowercase = ('abcdefghijklmnopqrstuvwxyz').split('');
-var uppercase = ('ABCDEFGHIJKLMNOPQRSTUVWXYZ').split('');
-var numbers = ('0123456789').split('');
-var specialCharacters = ('!@#$%^&*()~<>?').split('');
+var lowercase = 'abcdefghijklmnopqrstuvwxyz';
+var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var numbers = '0123456789';
+var specialCharacters = '!@#$%^&*()~<>?';
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -10,9 +10,9 @@ function generatePassword() {
   console.log('clicked the button');//to ensure that what you want to happen is happening
   //1. prompt for password criteria
   var userChoice = prompt('How many characters do you want your password to be?');
-  console.log(userChoice);
+  var passwordLength = userChoice
   //    a. password length 8 <128
-  var passwordLength = parseInt(userChoice);
+  //var passwordLength = parseInt(userChoice);
   if (isNaN(passwordLength)){
     alert('Must be a number.');
     return;
@@ -32,33 +32,33 @@ function generatePassword() {
   var specialCharAlert = confirm('Do you want special characters in your password?');
   console.log(specialCharAlert);
 
-  var selectedOptions = []
+  var selectedOptions = '';
 //2. validate for input
 //    set each input/confirm to variable. use conditional--if true... 
   if (lowercaseAlert === true){
-    selectedOptions.push(lowercase);
+    selectedOptions += lowercase;
   }
   if (uppercaseAlert === true){
-    selectedOptions.push(uppercase);
+    selectedOptions += uppercase;
   }
   if (numberAlert === true){
-    selectedOptions.push(numbers);
+    selectedOptions += numbers;
   }
   if (specialCharAlert === true){
-    selectedOptions.push(specialCharacters);
+    selectedOptions += specialCharacters;
   }
   console.log(selectedOptions);
   
   //3. display generated password
-  var generatedPassword = ('');
+  var generatedPassword = '';
 
   //look up math methods and functions to generate random stuff
   for (var i = 0; i < passwordLength; i++) {
     var randomIndex = Math.floor(Math.random() * selectedOptions.length);
     var randomChar = selectedOptions[randomIndex];
-    randomChar.textContent += generatedPassword;
+    generatedPassword += randomChar;
   }
-  console.log(randomChar);
+  console.log(generatedPassword);
   return generatedPassword;//<---whatever gets returned based on prompts
 }
 // Write password to the #password input
