@@ -12,4 +12,4 @@ This website is a password generator. A randomized password will generate once u
 
 [Portfolio Github Repo](https://github.com/jessicashong/password-generator)
 
-[Password Generator Website](https://jessicashong.github.io/password-generator/)
+[Password Generator Website](https://jessicashong.github.io/password-generator/index.html)
